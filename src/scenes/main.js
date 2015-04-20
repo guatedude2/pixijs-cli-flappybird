@@ -21,31 +21,8 @@ class MainScene extends GameScene{
     this.score = 0;
     this.highscore = 0;
     this.obstacles = [];
-
-
-    // create and add the paralax background
-    this.bg = new Background();
-    this.addChild(this.bg);
-
-    // create and add obstacle container
-    this.obstacleContainer = new PIXI.DisplayObjectContainer();
-    this.addChild(this.obstacleContainer);
-
-    // create and add player
-    this.player = new Player();
-    this.player.on('collided', this.collided.bind(this));
-    this.player.on('goal', this.goal.bind(this));
-    SpriteCollider.addSprite(this.player, [0, 1, 2]);
-    this.addChild(this.player);
-
-    // create and add score label
-    this.scoreLabel = new PIXI.BitmapText("0", { font: '90px Pixel' });
-    this.scoreLabel.position.set(GameWindow.stageWidth/2 - this.scoreLabel.width/2, 200);
-    this.addChild(this.scoreLabel);
-
-    // create score board
-    this.scoreBoard = new ScoreBoard();
-    this.scoreBoard.restart = this.restart();
+    
+    //TODO: Add objects to stage
 
   }
 
@@ -67,14 +44,7 @@ class MainScene extends GameScene{
 
   // triggered when the player touches a goal
   goal() {
-    // increase score and highscore
-    this.score++;
-    if (this.score > this.highscore){
-      this.highscore = this.score;
-    }
-    //update score label and center it
-    this.scoreLabel.setText(this.score.toString());
-    this.scoreLabel.position.set(GameWindow.stageWidth/2 - this.scoreLabel.width/2, 200);
+  	//TODO: add goal code
   }
 
   // triggered when the user presses the "play again" button
@@ -112,11 +82,7 @@ class MainScene extends GameScene{
 
   // user input on mobile
   touchstart() {
-    if (!this.gameover) {
-      this.started = true;
-      //make player jump
-      this.player.jump();
-    }
+  	//TODO: add jump code
   }
 
   // user input on desktop
