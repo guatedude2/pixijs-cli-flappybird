@@ -1,0 +1,8 @@
+{
+    "name": "myProject",
+    "sourcePath": "src",
+    "pluginsPath": "libs/plugins",
+    "vendorPath": "libs/vendor",
+    "publicPath": "public",
+    "outputPath": "dist"
+}
